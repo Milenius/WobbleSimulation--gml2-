@@ -1,0 +1,48 @@
+----------------------------------------------------------------------------------------------
+//Version 1 vom Input (Wurde mit BIAS genutzt)
+/*
+if (point_direction(x,y,nearest_food.x,nearest_food.y) < direction) 
+{
+    neuronet_input[0] = distance_to_object(nearest_food)/10;
+}
+else 
+{
+    neuronet_input[0] = -distance_to_object(nearest_food)/10;
+}
+
+if (point_direction(x,y,nearest_poison.x,nearest_poison.y) < direction) 
+{
+    neuronet_input[1] = distance_to_object(nearest_poison)/10;
+}
+else 
+{
+    neuronet_input[1] = -distance_to_object(nearest_poison)/10;
+}
+*/
+----------------------------------------------------------------------------------------------
+//Version 2
+/*
+neuronet_input[0] = point_direction(x,y,nearest_food.x,nearest_food.y)
+neuronet_input[1] = point_direction(x,y,nearest_poison.x,nearest_poison.y)
+*/
+----------------------------------------------------------------------------------------------
+//Version 3
+/*
+if (point_direction(x,y,nearest_food.x,nearest_food.y) < direction) 
+{
+    neuronet_input[0] = 1;
+}
+else 
+{
+    neuronet_input[0] = -1;
+}
+
+if (point_direction(x,y,nearest_poison.x,nearest_poison.y) < direction) 
+{
+    neuronet_input[1] = 1;
+}
+else 
+{
+    neuronet_input[1] = -1;
+}
+*/

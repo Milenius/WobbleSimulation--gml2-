@@ -1,0 +1,37 @@
+----------------------------------------------------------------------------------------------
+//Version 1 von der Output verwendung (Wurde mit Version 1 Input verwendet)
+/*
+if (neuronet_output[0] > neuronet_output[1])
+{
+    direction += 5;
+}
+if (neuronet_output[0] < neuronet_output[1]) 
+{
+    direction -= 5;
+}
+*/
+----------------------------------------------------------------------------------------------
+//Version 2
+/*
+//direction += (neuronet_output[0] + neuronet_output[1])*100;
+if (neuronet_output[0] + neuronet_output[1]) > 0
+{
+    direction += 5;
+}
+if (neuronet_output[0] + neuronet_output[1]) < 0
+{
+    direction -= 5;
+}
+*/
+----------------------------------------------------------------------------------------------
+//Version 3
+/*
+if neuronet_output[0] > 0
+{
+    direction += 5;
+}
+if neuronet_output[0] < 0
+{
+    direction -= 5;
+}
+*/

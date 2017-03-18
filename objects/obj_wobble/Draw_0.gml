@@ -16,6 +16,13 @@ if global.show_debug = true
 			draw_line(x,y,nearest_poison.x,nearest_poison.y)
 		}
 	}
+	if nearest_wobble != noone && nearest_wobble != id
+	{
+		if	instance_exists(nearest_wobble)
+		{
+			draw_line(x,y,nearest_wobble.x,nearest_wobble.y)
+		}
+	}
 	
 	draw_line(x,y,x+lengthdir_x(32,direction),y+lengthdir_y(32,direction))
 

@@ -3,6 +3,7 @@
 //Nächsteobjekterkennung.tm
 nearest_food = instance_nearest(x,y,obj_food);
 nearest_poison = instance_nearest(x,y,obj_poison);
+nearest_wobble = instance_nearest(nearest_food.x,nearest_food.y,obj_wobble);
 
 if (point_direction(x,y,nearest_food.x,nearest_food.y) < direction) 
 {
@@ -22,9 +23,18 @@ else
     neuronet_input[1] = -1;
 }
 
+if (point_direction(x,y,nearest_wobble.x,nearest_wobble.y) < direction) 
+{
+    neuronet_input[2] = 1;
+}
+else 
+{
+    neuronet_input[2] = -1;
+}
+
 //BIAS
 
-neuronet_input[2] = 1;
+neuronet_input[3] = 1;
 
 //Output
 neuronet_output = scr_neuronet(neuronet_input,syn0,syn1,syn2);

@@ -1,1 +1,1 @@
-kalorien = -100;
+kalorien = -150;

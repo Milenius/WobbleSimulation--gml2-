@@ -49,7 +49,7 @@ if neuronet_output[0] < 0
 }
 
 //Bewegung im Geschwindigkeits & Richtungsmodell
-speed = 2;
+speed = (neuronet_output[1] + 1) * (max_spd/2);
 image_angle = direction-90
 
 //Kollisionsabfrage Systeme
@@ -57,7 +57,7 @@ image_angle = direction-90
 cur_food = instance_place(x,y,obj_food);
 if (cur_food != noone)
 {
-    alarm[0] += cur_food.kalorien;
+    hp += cur_food.kalorien;
     with cur_food
     {
         instance_destroy();
@@ -69,7 +69,7 @@ if (cur_food != noone)
 cur_poison = instance_place(x,y,obj_poison);
 if (cur_poison != noone)
 {
-    alarm[0] += cur_poison.kalorien;    
+    hp += cur_poison.kalorien;    
     with cur_poison
     {
         instance_destroy();
@@ -78,15 +78,17 @@ if (cur_poison != noone)
 }
 
 //Überlebens und Sterbe Systeme
-if (alarm[0] >= max_lifespan)
+if (hp >= max_lifespan)
 {
-    alarm[0] = max_lifespan;
+    hp = max_lifespan;
 }
 
-if (alarm[0] <= 0)
+if (hp <= 0)
 {
-    alarm[0] = 1;
+    instance_destroy();
 }
+
+hp--;
 
 //Genocide Button
 /*

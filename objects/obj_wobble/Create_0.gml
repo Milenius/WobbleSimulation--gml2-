@@ -10,7 +10,6 @@ lifespan = 300;
 hp = 300;
 max_lifespan = 1500;
 max_spd = 4;
-alarm[0] = lifespan;
 debug_modus = false; 
 
 new_gen = false;

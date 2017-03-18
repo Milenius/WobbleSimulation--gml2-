@@ -25,6 +25,8 @@ if global.show_debug = true
 	}
 	
 	draw_line(x,y,x+lengthdir_x(32,direction),y+lengthdir_y(32,direction))
+	
+	draw_healthbar(x-(sprite_width/2),y+(sprite_height/2)+8,x+(sprite_width/2),y+(sprite_height/2)+12,(hp/max_lifespan)*100, c_black, c_red, c_lime, 0, true, true)
 
 }
 

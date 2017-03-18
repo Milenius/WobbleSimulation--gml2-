@@ -49,7 +49,7 @@ if neuronet_output[0] < 0
 }
 
 //Bewegung im Geschwindigkeits & Richtungsmodell
-speed = (neuronet_output[1] + 1) * (max_spd/2);
+speed = neuronet_output[1] + 3;
 image_angle = direction-90
 
 //Kollisionsabfrage Systeme
@@ -88,7 +88,7 @@ if (hp <= 0)
     instance_destroy();
 }
 
-hp--;
+hp -= speed/2;
 
 //Genocide Button
 /*

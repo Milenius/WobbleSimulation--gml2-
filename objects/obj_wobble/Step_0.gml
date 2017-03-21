@@ -14,16 +14,15 @@ else
     neuronet_input[0] = -1;
 }
 
-if (point_direction(x,y,nearest_poison.x,nearest_poison.y) < direction) 
-{
-    neuronet_input[1] = 1;
-}
-else 
-{
-    neuronet_input[1] = -1;
-}
+neuronet_input[1] = distance_to_object(nearest_food)/max_dis_input * 2 - 1
 
-if (point_direction(x,y,nearest_wobble.x,nearest_wobble.y) < direction) 
+if neuronet_input[1] < -1
+{neuronet_input[1] = -1;}
+
+if neuronet_input[1] > 1
+{neuronet_input[1] = 1;}
+
+if (point_direction(x,y,nearest_poison.x,nearest_poison.y) < direction) 
 {
     neuronet_input[2] = 1;
 }
@@ -32,12 +31,37 @@ else
     neuronet_input[2] = -1;
 }
 
+neuronet_input[3] = distance_to_object(nearest_food)/max_dis_input * 2 - 1
+
+if neuronet_input[3] < -1
+{neuronet_input[3] = -1;}
+
+if neuronet_input[3] > 1
+{neuronet_input[3] = 1;}
+
+if (point_direction(x,y,nearest_wobble.x,nearest_wobble.y) < direction) 
+{
+    neuronet_input[4] = 1;
+}
+else 
+{
+    neuronet_input[4] = -1;
+}
+
+neuronet_input[5] = distance_to_object(nearest_food)/max_dis_input * 2 - 1
+
+if neuronet_input[5] < -1
+{neuronet_input[5] = -1;}
+
+if neuronet_input[5] > 1
+{neuronet_input[5] = 1;}
+
 //Sonstige Sinne
-neuronet_input[3] = ((hp/max_lifespan) * 2 ) - 1
+neuronet_input[6] = ((hp/max_lifespan) * 2 ) - 1
 
 //BIAS
 
-neuronet_input[4] = 1;
+neuronet_input[7] = 1;
 
 //Output
 neuronet_output = scr_neuronet(neuronet_input,syn0,syn1,syn2);

@@ -32,9 +32,12 @@ else
     neuronet_input[2] = -1;
 }
 
+//Sonstige Sinne
+neuronet_input[3] = ((hp/max_lifespan) * 2 ) - 1
+
 //BIAS
 
-neuronet_input[3] = 1;
+neuronet_input[4] = 1;
 
 //Output
 neuronet_output = scr_neuronet(neuronet_input,syn0,syn1,syn2);

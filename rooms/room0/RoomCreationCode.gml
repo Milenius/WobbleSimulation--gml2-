@@ -1,1 +1,1 @@
-randomize();
+random_set_seed(2712);

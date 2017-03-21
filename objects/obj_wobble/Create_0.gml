@@ -15,8 +15,8 @@ debug_modus = false;
 new_gen = false;
 
 //Input Layer | Hidden Layer 1
-syn0 = scr_random_matrix(4,4);
-syn1 = scr_random_matrix(4,4);	
+syn0 = scr_random_matrix(5,6);
+syn1 = scr_random_matrix(6,4);	
 syn2 = scr_random_matrix(4,2);
 
 frame_skip = 0;

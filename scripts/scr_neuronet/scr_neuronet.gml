@@ -15,9 +15,11 @@ l3 = scr_tanh_matrix(scr_matrix_dot(l2,syn2));
 if (instance_number(obj_wobble) <= 50) || (new_gen == true)
 {   
 	new_gen = true;
+	other.hp += 300;
 	
     for (var i = 0; i < 4;i++)
     {
+		
         with instance_create_layer(irandom(room_width),irandom(room_height),"Instances",obj_wobble)
         {
             syn0 = other.syn0;
